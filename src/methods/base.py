@@ -1,5 +1,6 @@
 import tensorflow as tf
 
+
 class StaticDistillation(tf.keras.Model):
     def __init__(self, student, teacher):
         super(StaticDistillation, self).__init__()
@@ -15,7 +16,7 @@ class StaticDistillation(tf.keras.Model):
         alpha=0.1,
         temperature=3,
     ):
-        """ Configure the StaticDistillation Process.
+        """Configure the StaticDistillation Process.
 
         Args:
             optimizer: Keras optimizer for the student weights

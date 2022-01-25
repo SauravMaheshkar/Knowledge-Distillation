@@ -1,17 +1,16 @@
 # ================= Import Packages ================= #
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras import layers
-import numpy as np
+
 from src.methods.base import StaticDistillation
 
 # ================= Create Networks ================= #
 
 # Create the teacher
-teacher = tf.keras.applications.resnet50.ResNet50(weights = None, input_shape=(32,32,3))
+teacher = tf.keras.applications.resnet50.ResNet50(weights=None, input_shape=(32, 32, 3))
 
 # Create the student
-student = tf.keras.applications.resnet50.ResNet50(weights = None, input_shape=(32,32,3))
+student = tf.keras.applications.resnet50.ResNet50(weights=None, input_shape=(32, 32, 3))
 
 # Clone student for later comparison
 student_scratch = keras.models.clone_model(student)
