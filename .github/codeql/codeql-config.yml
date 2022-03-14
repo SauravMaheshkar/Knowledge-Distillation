@@ -1,0 +1,6 @@
+paths:
+  - src
+  - examples
+  - '**/*.py'
+paths-ignore:
+  - 'tests/**'
