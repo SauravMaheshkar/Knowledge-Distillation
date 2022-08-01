@@ -1,5 +1,5 @@
 # Use an alpine image
-FROM ubuntu:impish-20220531 AS builder
+FROM ubuntu:22.04 AS builder
 
 # metainformation
 LABEL version="0.0.1"
@@ -18,12 +18,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		gfortran \
 		libopenblas-dev \
 		python3 \
-		python3.9 \
+		python3.10 \
 		python3-pip \
-		python3.9-dev \
-		python3.9-venv \
+		python3.10-dev \
+		python3.10-venv \
 		&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY . .
-RUN python3.9 -m pip install --no-cache-dir --upgrade pip setuptools wheel isort
-RUN python3.9 -m pip install --no-cache-dir -r requirements.txt
+RUN python3.10 -m pip install --no-cache-dir --upgrade pip setuptools wheel isort
+RUN python3.10 -m pip install --no-cache-dir -r requirements.txt
